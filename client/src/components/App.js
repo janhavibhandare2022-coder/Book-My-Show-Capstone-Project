@@ -28,7 +28,7 @@ const App = () => {
   }, [seatCount]);
 // Last Booking fetch karnyasaathi
   useEffect(() => {
-    fetch('http://localhost:8080/api/booking')
+    fetch('https://book-my-show-capstone-project-1593.onrender.com/api/booking')
       .then((res) => res.json())
       .then((data) => {
         if (data && data.length > 0) {
@@ -43,7 +43,7 @@ const App = () => {
   // Fetch last booking
   const fetchLastBooking = async () => {
     try {
-      const res = await fetch('http://localhost:8080/api/booking');
+      const res = await fetch('https://book-my-show-capstone-project-1593.onrender.com/api/booking');
       const data = await res.json();
       if (res.ok && !data.message) {
         setLastBooking(data);
@@ -83,7 +83,7 @@ const App = () => {
     setErrorMsg('');
 
     try {
-      const response = await fetch('http://localhost:8080/api/booking', {
+      const response = await fetch('https://book-my-show-capstone-project-1593.onrender.com/api/booking', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
